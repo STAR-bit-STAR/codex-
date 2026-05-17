@@ -5,6 +5,8 @@
   "description": "可安装到电脑/手机桌面的乙游 Q 版桌宠 PWA 原型。",
   "type": "module",
   "scripts": {
+    "desktop": "electron .",
+    "preview": "python3 -m http.server 4173",
     "lint": "node scripts/lint.mjs",
     "test": "node scripts/test.mjs"
   },
@@ -14,5 +16,9 @@
     "otome",
     "桌宠"
   ],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^37.0.0"
+  }
 }

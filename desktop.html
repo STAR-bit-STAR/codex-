@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>心动桌宠 Desktop</title>
+    <link rel="stylesheet" href="./src/desktop.css" />
+  </head>
+  <body>
+    <main class="desktop-pet-shell" aria-label="心动桌宠桌面模式">
+      <section class="pet-stage" aria-label="透明桌面宠物层">
+        <div class="desktop-toolbar" data-panel>
+          <strong>心动桌宠</strong>
+          <button type="button" data-panel-toggle="settings">设置</button>
+          <button type="button" data-panel-toggle="chat">聊天</button>
+          <button type="button" data-hide>隐藏</button>
+        </div>
+
+        <div class="speech-bubble" id="desktopSpeech" role="status" aria-live="polite">
+          我会常驻在桌面上，试试摸头、跳舞或切换 Q 版形态。
+        </div>
+
+        <button class="mate-avatar" id="mateAvatar" type="button" aria-label="桌面 Q 版角色，按住可拖动">
+          <span class="aura"></span>
+          <span class="avatar-head">
+            <span class="bang bang-left"></span>
+            <span class="bang bang-right"></span>
+            <span class="avatar-eye eye-left"></span>
+            <span class="avatar-eye eye-right"></span>
+            <span class="avatar-mouth"></span>
+          </span>
+          <span class="avatar-body"></span>
+          <span class="avatar-leg leg-left"></span>
+          <span class="avatar-leg leg-right"></span>
+        </button>
+
+        <div class="window-shelf" id="windowShelf" aria-hidden="true">窗口边缘休息区</div>
+      </section>
+
+      <aside class="dock-panel settings-panel" id="settingsPanel" data-panel>
+        <header>
+          <h1>Mate 模式控制台</h1>
+          <p>参考 Mate Engine 的桌面伴侣体验：常驻、置顶、角色互动、跳舞、模型槽和放松模式。</p>
+        </header>
+
+        <div class="control-grid">
+          <button type="button" data-action="pat">摸头冒爱心</button>
+          <button type="button" data-action="dance">跟随音乐跳舞</button>
+          <button type="button" data-action="sit">坐到窗口边缘</button>
+          <button type="button" data-action="chibi">Q 版变身</button>
+          <button type="button" data-action="relax">放松模式</button>
+          <button type="button" data-action="summon">回到屏幕角落</button>
+        </div>
+
+        <label class="field">
+          <span>角色缩放</span>
+          <input id="scaleRange" type="range" min="70" max="150" value="100" />
+        </label>
+        <label class="field">
+          <span>动画速度</span>
+          <input id="speedRange" type="range" min="60" max="180" value="100" />
+        </label>
+        <label class="field check-field">
+          <input id="alwaysOnTop" type="checkbox" checked />
+          <span>窗口置顶</span>
+        </label>
+        <label class="field check-field">
+          <input id="clickThrough" type="checkbox" />
+          <span>专注时鼠标穿透</span>
+        </label>
+
+        <section class="model-card">
+          <h2>模型槽</h2>
+          <p>第一版先保留 VRM/Live2D 导入入口；接入 Three.js/Live2D SDK 后可替换当前 CSS 角色。</p>
+          <label class="file-drop">
+            <input id="modelInput" type="file" accept=".vrm,.glb,.gltf,.model3.json" />
+            <span id="modelName">选择 VRM / Live2D 模型文件</span>
+          </label>
+        </section>
+      </aside>
+
+      <aside class="dock-panel chat-panel" id="chatPanel" data-panel hidden>
+        <header>
+          <h2>陪伴聊天</h2>
+          <p>先用本地台词模拟，后续可接本地 LLM 或云端模型。</p>
+        </header>
+        <div class="chat-log" id="chatLog">
+          <p><b>澈：</b>今天也把我放在桌面上吧，我会陪你完成任务。</p>
+        </div>
+        <form class="chat-form" id="chatForm">
+          <input id="chatInput" type="text" placeholder="和他说点什么……" autocomplete="off" />
+          <button type="submit">发送</button>
+        </form>
+      </aside>
+    </main>
+    <script type="module" src="./src/desktop.js"></script>
+  </body>
+</html>
