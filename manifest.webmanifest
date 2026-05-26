@@ -1,0 +1,18 @@
+{
+  "name": "心动桌宠 · Q 版乙游陪伴",
+  "short_name": "心动桌宠",
+  "description": "可安装到电脑或手机桌面的乙游 Q 版陪伴型桌宠 PWA。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff7ff",
+  "theme_color": "#8f63ff",
+  "icons": [
+    {
+      "src": "./src/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

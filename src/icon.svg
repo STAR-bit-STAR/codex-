@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="心动桌宠图标">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8f63ff"/>
+      <stop offset="1" stop-color="#ff7bbd"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bg)"/>
+  <circle cx="256" cy="236" r="110" fill="#ffe0d5"/>
+  <path d="M146 226c10-84 67-130 118-130s96 39 106 130c-34-35-68-48-112-48-42 0-78 13-112 48z" fill="#3d2a72"/>
+  <circle cx="218" cy="246" r="15" fill="#2d2540"/>
+  <circle cx="294" cy="246" r="15" fill="#2d2540"/>
+  <path d="M235 295c18 20 43 20 61 0" fill="none" stroke="#d8667a" stroke-width="16" stroke-linecap="round"/>
+  <path d="M176 382c24-58 137-58 160 0" fill="#fff"/>
+  <path d="M376 154l17 35 38 6-28 27 7 38-34-18-34 18 7-38-28-27 38-6 17-35z" fill="#fff3a6"/>
+</svg>

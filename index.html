@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8f63ff" />
+    <meta
+      name="description"
+      content="心动桌宠是一款可安装到电脑或手机桌面的乙游 Q 版陪伴型桌宠 PWA。"
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>心动桌宠 · Q 版乙游陪伴</title>
+  </head>
+  <body>
+    <main class="shell" aria-labelledby="app-title">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Mate Engine 风格桌宠 · 桌面版优先</p>
+          <h1 id="app-title">把乙游里的 Q 版男主，真正放到电脑桌面上。</h1>
+          <p class="lead">
+            心动桌宠现在主推 Electron 透明置顶桌面模式：角色能常驻屏幕、拖动摆放、
+            摸头冒爱心、跳舞、坐到窗口边缘，并预留 VRM / Live2D 模型槽。
+          </p>
+          <div class="hero-actions">
+            <button class="primary" id="installButton" type="button" hidden>安装 PWA 备用版</button>
+            <a class="secondary" href="#pet-stage">先体验网页预览</a>
+          </div>
+        </div>
+        <aside class="market-card" aria-label="产品定位">
+          <h2>我们的吸引点</h2>
+          <ul>
+            <li>Electron 透明置顶，方向更接近 Mate Engine。</li>
+            <li>桌面端支持跳舞、摸头、窗口边缘休息和 Q 版变身。</li>
+            <li>乙游男主陪伴感 + 后续 VRM / Live2D 模型替换。</li>
+            <li>PWA 仅作为手机主屏和浏览器备用入口。</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="workspace" id="pet-stage" aria-label="桌宠体验区">
+        <div class="desktop-window">
+          <div class="window-bar">
+            <span></span><span></span><span></span>
+            <strong>桌面预览</strong>
+          </div>
+          <div class="desktop-grid">
+            <article class="todo-card">
+              <h2>今日羁绊任务</h2>
+              <label><input type="checkbox" data-task="focus" /> 完成 25 分钟专注</label>
+              <label><input type="checkbox" data-task="water" /> 喝水并记录心情</label>
+              <label><input type="checkbox" data-task="story" /> 解锁一句新台词</label>
+            </article>
+            <article class="story-card">
+              <h2>剧情碎片</h2>
+              <p id="storyText">“今天也辛苦了。我会把你的努力，全部记在心动手账里。”</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="pet-layer" id="petLayer">
+          <div class="speech" id="speech" role="status" aria-live="polite">点点我，我会回应你。</div>
+          <button class="pet" id="pet" type="button" aria-label="Q 版桌宠，按住可拖动">
+            <span class="sparkle sparkle-one">✦</span>
+            <span class="sparkle sparkle-two">♡</span>
+            <span class="hair"></span>
+            <span class="face">
+              <span class="eye left"></span>
+              <span class="eye right"></span>
+              <span class="mouth"></span>
+            </span>
+            <span class="body"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="control-panel" aria-label="桌宠控制台">
+        <div>
+          <h2>互动</h2>
+          <div class="controls">
+            <button type="button" data-action="pat">摸摸</button>
+            <button type="button" data-action="feed">投喂甜点</button>
+            <button type="button" data-action="focus">开始 25 分钟专注</button>
+            <button type="button" data-action="outfit">换装</button>
+          </div>
+        </div>
+        <div class="stats" aria-label="羁绊状态">
+          <span>羁绊等级 <strong id="bondLevel">1</strong></span>
+          <span>心动值 <strong id="heartScore">0</strong></span>
+          <span>状态 <strong id="petMood">期待中</strong></span>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
